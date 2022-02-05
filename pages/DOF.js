@@ -1,11 +1,7 @@
 import React from 'react';
 
 const DOF = () => {
-  return (
-    <div>
-      DOF
-    </div>
-  );
-}
+	return <div>Daughters Of Faith</div>;
+};
 
 export default DOF;
