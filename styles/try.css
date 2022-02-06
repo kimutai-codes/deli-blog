@@ -1,11 +1,15 @@
 .footer {
-  background-color: aquamarine;
+	background-color: aquamarine;
 }
 
-.navbar{
-  background-color: aquamarine;
+.navbar {
+	background-color: aquamarine;
 }
 
-ul{
-  list-style-type: none;
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
 }
