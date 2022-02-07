@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
+	const [dropDown, setDropDown] = useState(false);
+	const dropClick = (e) => {
+		setDropDown(!dropDown);
+		console.log('brrr');
+	};
 	return (
 		<div className='navbar-div'>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
@@ -24,7 +29,10 @@ const Navbar = () => {
 				<li>About</li>
 
 				{/* btn for departnmets */}
-				<li className='departments btn'>
+				<li
+					className={`departments btn ${dropDown ? 'dropped' : ''}`}
+					onClick={dropClick}
+				>
 					Departments
 					<ul>
 						<li>
@@ -72,7 +80,7 @@ const Navbar = () => {
 					</ul>
 				</li>
 				{/* hambugger menu */}
-				<li>
+				<li className='menu'>
 					<Image
 						src='/hamburger-menu-svgrepo-com.svg'
 						alt='logo'
@@ -85,6 +93,7 @@ const Navbar = () => {
 				.navbar {
 					display: flex;
 					flex-direction: row;
+          justify-content: space-between;
 				}
 
 				.btn a {
@@ -95,11 +104,19 @@ const Navbar = () => {
 					text-decoration: underline;
 				}
 
+				.dropped a {
+					display: inline;
+				}
+
 				.navbar li {
 					padding: 5px;
 					text-align: center;
 					color: saddlebrown;
 				}
+				.menu {
+					display: none;
+				}
+
 			`}</style>
 		</div>
 	);
