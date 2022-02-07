@@ -99,33 +99,7 @@ const Navbar = () => {
 					/>
 				</li>
 			</ul>
-			<style jsx>{`
-				.navbar {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-				}
-
-				.btn a {
-					display: none;
-				}
-
-				.dropped a {
-					display: inline;
-				}
-				.mindropped a {
-					display: inline;
-				}
-
-				.navbar li {
-					padding: 5px;
-					text-align: center;
-					color: saddlebrown;
-				}
-				.menu {
-					display: none;
-				}
-			`}</style>
+			<style jsx>{``}</style>
 		</div>
 	);
 };
