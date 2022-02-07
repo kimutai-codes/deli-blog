@@ -4,9 +4,16 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
 	const [dropDown, setDropDown] = useState(false);
+	const [minDrop, setminDrop] = useState(false);
+
 	const dropClick = (e) => {
 		setDropDown(!dropDown);
+		setminDrop(!minDrop);
 		console.log('brrr');
+	};
+	const dropMin = () => {
+		setminDrop(!minDrop);
+		setDropDown(!dropDown);
 	};
 	return (
 		<div className='navbar-div'>
@@ -59,7 +66,10 @@ const Navbar = () => {
 				</li>
 
 				{/* another btn for ministries */}
-				<li className='ministries btn'>
+				<li
+					className={`ministries btn ${minDrop ? 'mindropped' : ''}`}
+					onClick={dropMin}
+				>
 					Ministries
 					<ul>
 						<li>
@@ -93,18 +103,17 @@ const Navbar = () => {
 				.navbar {
 					display: flex;
 					flex-direction: row;
-          justify-content: space-between;
+					justify-content: space-between;
 				}
 
 				.btn a {
-					color: red;
 					display: none;
-				}
-				.btn {
-					text-decoration: underline;
 				}
 
 				.dropped a {
+					display: inline;
+				}
+				.mindropped a {
 					display: inline;
 				}
 
@@ -116,7 +125,6 @@ const Navbar = () => {
 				.menu {
 					display: none;
 				}
-
 			`}</style>
 		</div>
 	);
