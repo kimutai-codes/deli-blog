@@ -20,10 +20,11 @@ const Navbar = () => {
 						</a>
 					</Link>
 				</li>
+
 				<li>About</li>
 
 				{/* btn for departnmets */}
-				<li>
+				<li className='departments btn'>
 					Departments
 					<ul>
 						<li>
@@ -50,7 +51,7 @@ const Navbar = () => {
 				</li>
 
 				{/* another btn for ministries */}
-				<li>
+				<li className='ministries btn'>
 					Ministries
 					<ul>
 						<li>
@@ -73,10 +74,23 @@ const Navbar = () => {
 			</ul>
 			<style jsx>{`
 				.navbar {
-					color: red;
 					display: flex;
 					flex-direction: row;
 					width: 100%;
+				}
+
+				.btn a {
+					color: red;
+					display: none;
+				}
+				.btn {
+					text-decoration: underline;
+				}
+
+				.navbar li {
+					padding: 5px;
+					text-align: center;
+					color: saddlebrown;
 				}
 			`}</style>
 		</div>
