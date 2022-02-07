@@ -71,12 +71,20 @@ const Navbar = () => {
 						</li>
 					</ul>
 				</li>
+				{/* hambugger menu */}
+				<li>
+					<Image
+						src='/hamburger-menu-svgrepo-com.svg'
+						alt='logo'
+						width='30px'
+						height='30px'
+					/>
+				</li>
 			</ul>
 			<style jsx>{`
 				.navbar {
 					display: flex;
 					flex-direction: row;
-					width: 100%;
 				}
 
 				.btn a {
