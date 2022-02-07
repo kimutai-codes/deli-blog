@@ -33,7 +33,11 @@ const Navbar = () => {
 					</Link>
 				</li>
 
-				<li>About</li>
+				<li>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </li>
 
 				{/* btn for departnmets */}
 				<li
@@ -110,13 +114,6 @@ const Navbar = () => {
 					display: none;
 				}
 
-				.dropped a {
-					display: inline;
-				}
-				.mindropped a {
-					display: inline;
-				}
-
 				.navbar li {
 					padding: 5px;
 					text-align: center;
@@ -124,6 +121,18 @@ const Navbar = () => {
 				}
 				.menu {
 					display: none;
+				}
+
+				@media(max-width:600px) {
+          .menu{
+            display: block;
+          }
+					.dropped a {
+						display: inline;
+					}
+					.mindropped a {
+						display: inline;
+					}
 				}
 			`}</style>
 		</div>
