@@ -1,12 +1,25 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
 	return (
-		<div className='navbar'>
+		<div className='navbar-div'>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
 			{/* how to select second item in css */}
-			<ul>
+			<ul className='navbar'>
+				<li>
+					<Link href='/'>
+						<a>
+							<Image
+								src='/logo.png'
+								alt='logo'
+								width='30px'
+								height='30px'
+							/>
+						</a>
+					</Link>
+				</li>
 				<li>About</li>
 
 				{/* btn for departnmets */}
