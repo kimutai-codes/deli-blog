@@ -112,10 +112,12 @@ const Navbar = () => {
 				.navbar li {
 					position: relative;
 					float: left;
-					padding: 0 5px;
 					font-size: 20px;
 				}
-				.navbar ul li a {
+				.navbar li ul {
+					padding: 0;
+				}
+				.navbar li ul li a {
 					display: block;
 					padding: 10px;
 				}
@@ -126,17 +128,14 @@ const Navbar = () => {
 				.navbar li ul {
 					display: none;
 					position: absolute;
-					width: 200px;
-					float: left;
 					background-color: white;
 				}
 
-				.navbar ul li {
-					width: 100;
+				.navbar li ul li {
+					width: 100%;
 					border-top: 1px solid grey;
 				}
 
-				.navbar li:focus-within > ul,
 				.navbar li:hover > ul {
 					display: initial;
 				}
