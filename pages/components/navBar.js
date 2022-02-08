@@ -16,7 +16,7 @@ const Navbar = () => {
 		setDropDown(!dropDown);
 	};
 	return (
-		<div className='navbar-div'>
+		<div className='navbar'>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
 			{/* how to select second item in css */}
 			<Link href='/' className='logo'>
@@ -30,12 +30,12 @@ const Navbar = () => {
 				</a>
 			</Link>
 
-			<div>About</div>
+			<divi className='about'>About</divi>
 
 			{/* btn for departnmets */}
-			<div>
+			<div className='departments sec'>
 				<button
-					className={`departments btn ${dropDown ? 'dropped' : ''}`}
+					className={` btn ${dropDown ? 'dropped' : ''}`}
 					onClick={dropClick}
 				>
 					Departments
@@ -65,9 +65,9 @@ const Navbar = () => {
 			</div>
 
 			{/* another btn for ministries */}
-			<div>
+			<div className='ministries sec'>
 				<button
-					className={`ministries btn ${minDrop ? 'mindropped' : ''}`}
+					className={` btn ${minDrop ? 'mindropped' : ''}`}
 					onClick={dropMin}
 				>
 					Ministries
@@ -91,15 +91,28 @@ const Navbar = () => {
 				</ul>
 			</div>
 			{/* hambugger menu */}
-			<div>
+			<div className='menu'>
 				<Image
 					src='/hamburger-menu-svgrepo-com.svg'
-					alt='logo'
+					alt='menu-icon'
 					width='30px'
 					height='30px'
 				/>
 			</div>
-			<style jsx>{``}</style>
+			<style jsx>{`
+				.navbar {
+					display: flex;
+				}
+				.about,
+				.sec {
+					display: none;
+				}
+
+				.menu {
+          float: right;
+          margin: 0 auto;
+				}
+			`}</style>
 		</div>
 	);
 };
