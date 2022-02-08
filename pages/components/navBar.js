@@ -129,6 +129,7 @@ const Navbar = () => {
 					display: none;
 					position: absolute;
 					background-color: white;
+					border-radius: 3%;
 				}
 
 				.navbar li ul li {
@@ -136,7 +137,7 @@ const Navbar = () => {
 					border-top: 1px solid grey;
 				}
 
-				.navbar li:hover > ul {
+				.navbar li:hover ul {
 					display: initial;
 				}
 			`}</style>
