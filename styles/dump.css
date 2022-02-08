@@ -1,0 +1,30 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.btn a {
+	display: none;
+}
+
+.navbar li {
+	padding: 5px;
+	text-align: center;
+	color: saddlebrown;
+}
+.menu {
+	display: none;
+}
+
+@media (max-width: 600px) {
+	.menu {
+		display: block;
+	}
+	.dropped a {
+		display: inline;
+	}
+	.mindropped a {
+		display: inline;
+	}
+}
