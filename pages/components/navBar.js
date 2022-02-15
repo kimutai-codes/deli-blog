@@ -90,17 +90,17 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* hambugger menu */}
-			<Image
-				src='/hamburger-menu-svgrepo-com.svg'
-				alt='logo'
-				width='30px'
-				height='30px'
-			/>
+			<div className='menu'>
+				<Image
+					src='/hamburger-menu-svgrepo-com.svg'
+					alt='logo'
+					width='30px'
+					height='30px'
+				/>
+			</div>
 			<style jsx>{`
 				.header {
 					background-color: rgb(240, 234, 234);
-					text-transform: capitalize;
-					color: rgb(158, 24, 24);
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
@@ -117,7 +117,7 @@ const Navbar = () => {
 				.navbar li ul {
 					padding: 0;
 				}
-				.navbar li ul li a {
+				.navbar ul li a {
 					display: block;
 					padding: 10px;
 				}
@@ -138,7 +138,24 @@ const Navbar = () => {
 				}
 
 				.navbar li:hover ul {
-					display: initial;
+					display: inherit;
+				}
+
+				.menu {
+					display: none;
+				}
+
+				@media (max-width: 900px) {
+					.header {
+						background-color: khaki;
+						justify-content: space-evenly;
+					}
+
+					.navbar > li {
+						margin: 0 5px;
+					}
+				}
+				@media (max-width: 500px) {
 				}
 			`}</style>
 		</div>
