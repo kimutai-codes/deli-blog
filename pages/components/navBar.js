@@ -147,6 +147,9 @@ const Navbar = () => {
 					}
 				}
 				@media (max-width: 500px) {
+					.header {
+						padding-top: 1.5%;
+					}
 					.menu {
 						display: initial;
 					}
@@ -166,6 +169,7 @@ const Navbar = () => {
 						margin: 0;
 						display: block;
 						width: 100%;
+						padding: 5px;
 					}
 					.navbar li ul {
 						position: relative;
