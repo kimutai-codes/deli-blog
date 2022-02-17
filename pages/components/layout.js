@@ -8,6 +8,13 @@ const Layout = ({ children }) => {
 			<Navbar />
 			<div>{children}</div>
 			{/* <Footer /> */}
+			<style jsx>
+				{`
+					div {
+						margin: 3%;
+					}
+				`}
+			</style>
 		</>
 	);
 };
