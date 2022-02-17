@@ -23,7 +23,7 @@ const Navbar = () => {
 			</Link>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
 			{/* how to select second item in css */}
-			<ul className='navbar'>
+			<ul className={`navbar ${menu ? 'show-menu' : ''}`}>
 				<li>
 					<Link href='/about'>
 						<a>About</a>
@@ -152,22 +152,25 @@ const Navbar = () => {
 					}
 
 					.navbar {
-            background-color: white;
-            position: absolute;
-            top: 2.5%;
-            width: 100%;
-            text-align: left;
+						background-color: white;
+						position: absolute;
+						top: 2.5%;
+						width: 100%;
+						text-align: left;
+						display: none;
 					}
-
-          .navbar > li{
-            margin: 0;
-            display: block;
-            width: 100%;
-          }
-          .navbar li ul{
-          position: relative;
-          width: 100%;
-          }
+					.show-menu {
+						display: block;
+					}
+					.navbar > li {
+						margin: 0;
+						display: block;
+						width: 100%;
+					}
+					.navbar li ul {
+						position: relative;
+						width: 100%;
+					}
 				}
 			`}</style>
 		</div>
