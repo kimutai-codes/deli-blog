@@ -3,17 +3,10 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Navbar = () => {
-	const [dropDown, setDropDown] = useState(false);
-	const [minDrop, setminDrop] = useState(false);
-
-	const dropClick = (e) => {
-		setDropDown(!dropDown);
-		setminDrop(!minDrop);
-		console.log('brrr');
-	};
-	const dropMin = () => {
-		setminDrop(!minDrop);
-		setDropDown(!dropDown);
+	const [menu, setMenu] = useState(false);
+	const menuHandler = () => {
+		setMenu(!menu);
+		console.log(menu);
 	};
 	return (
 		<div className='header'>
@@ -21,7 +14,7 @@ const Navbar = () => {
 			<Link href='/' className='logo'>
 				<a>
 					<Image
-						src='/logo.png'
+						src='/images/logo.png'
 						alt='logo'
 						width='30px'
 						height='30px'
@@ -90,9 +83,9 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* hambugger menu */}
-			<div className='menu'>
+			<div className='menu' onClick={menuHandler}>
 				<Image
-					src='/hamburger-menu-svgrepo-com.svg'
+					src='/images/hamburger-menu-svgrepo-com.svg'
 					alt='logo'
 					width='30px'
 					height='30px'
@@ -128,13 +121,13 @@ const Navbar = () => {
 				.navbar li ul {
 					display: none;
 					position: absolute;
-					background-color: white;
+					background-color: rgba(255, 255, 255, 0.651);
 					border-radius: 3%;
 				}
 
 				.navbar li ul li {
 					width: 100%;
-					border-top: 1px solid grey;
+					border-top: 1px solid rgba(128, 128, 128, 0.322);
 				}
 
 				.navbar li:hover ul {
@@ -147,8 +140,6 @@ const Navbar = () => {
 
 				@media (max-width: 900px) {
 					.header {
-						background-color: khaki;
-						justify-content: space-evenly;
 					}
 
 					.navbar > li {
@@ -156,6 +147,27 @@ const Navbar = () => {
 					}
 				}
 				@media (max-width: 500px) {
+					.menu {
+						display: initial;
+					}
+
+					.navbar {
+            background-color: white;
+            position: absolute;
+            top: 2.5%;
+            width: 100%;
+            text-align: left;
+					}
+
+          .navbar > li{
+            margin: 0;
+            display: block;
+            width: 100%;
+          }
+          .navbar li ul{
+          position: relative;
+          width: 100%;
+          }
 				}
 			`}</style>
 		</div>
