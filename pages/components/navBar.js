@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Navbar = () => {
 	const [menu, setMenu] = useState(false);
 	const menuHandler = () => {
 		setMenu(!menu);
-		console.log(menu);
+	};
+	const nodeRef = useRef();
+
+	const handleoutsideClick = (e) => {
+		if (!nodeRef.current.contains(e.target)) {
+			menuHandler();
+		}
 	};
 	return (
 		<div className='header'>
@@ -83,7 +89,13 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* hambugger menu */}
-			<div className='menu' onClick={menuHandler}>
+			<div
+				className='menu'
+				onClick={() => {
+					menuHandler();
+					handleoutsideClick();
+				}}
+			>
 				<Image
 					src='/images/hamburger-menu-svgrepo-com.svg'
 					alt='logo'
