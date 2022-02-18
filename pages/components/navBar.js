@@ -25,7 +25,7 @@ const Navbar = () => {
 	});
 
 	return (
-		<div className='header'>
+		<div className='header' ref={nodeRef}>
 			{/* nav link => home */}
 			<Link href='/' className='logo'>
 				<a>
@@ -39,7 +39,7 @@ const Navbar = () => {
 			</Link>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
 			{/* how to select second item in css */}
-			<ul className={`navbar ${menu ? 'show-menu' : ''}`} ref={nodeRef}>
+			<ul className={`navbar ${menu ? 'show-menu' : ''}`}>
 				<li>
 					<Link href='/about'>
 						<a>About</a>
@@ -99,12 +99,13 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* hambugger menu */}
-			<div className='menu' onClick={menuHandler}>
+			<div className='menu'>
 				<Image
 					src='/images/hamburger-menu-svgrepo-com.svg'
 					alt='logo'
 					width='30px'
 					height='30px'
+					onClick={menuHandler}
 				/>
 			</div>
 			<style jsx>{`
