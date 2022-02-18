@@ -7,13 +7,21 @@ const Navbar = () => {
 	const menuHandler = () => {
 		setMenu(!menu);
 	};
-	const nodeRef = useRef();
+
+	let nodeRef = useRef();
+
 	useEffect(() => {
-		document.addEventListener('mousedown', (event) => {
-			if (!nodeRef.current.contains(event.target)) {
+		let handler = (e) => {
+			if (!nodeRef.current.contains(e.target)) {
 				setMenu(false);
 			}
-		});
+		};
+
+		document.addEventListener('mousedown', handler);
+
+		return () => {
+			document.removeEventListener('mousedown', handler);
+		};
 	});
 
 	return (
@@ -91,12 +99,7 @@ const Navbar = () => {
 				</li>
 			</ul>
 			{/* hambugger menu */}
-			<div
-				className='menu'
-				onClick={() => {
-					menuHandler();
-				}}
-			>
+			<div className='menu' onClick={menuHandler}>
 				<Image
 					src='/images/hamburger-menu-svgrepo-com.svg'
 					alt='logo'
