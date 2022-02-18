@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 const Navbar = () => {
 	const [menu, setMenu] = useState(false);
@@ -8,12 +8,14 @@ const Navbar = () => {
 		setMenu(!menu);
 	};
 	const nodeRef = useRef();
+	useEffect(() => {
+		document.addEventListener('mousedown', (event) => {
+			if (!nodeRef.current.contains(event.target)) {
+				setMenu(false);
+			}
+		});
+	});
 
-	const handleoutsideClick = (e) => {
-		if (!nodeRef.current.contains(e.target)) {
-			menuHandler();
-		}
-	};
 	return (
 		<div className='header'>
 			{/* nav link => home */}
@@ -29,7 +31,7 @@ const Navbar = () => {
 			</Link>
 			{/* TODO the first list items will be buttons and the second will only show when the first is clicked */}
 			{/* how to select second item in css */}
-			<ul className={`navbar ${menu ? 'show-menu' : ''}`}>
+			<ul className={`navbar ${menu ? 'show-menu' : ''}`} ref={nodeRef}>
 				<li>
 					<Link href='/about'>
 						<a>About</a>
@@ -93,7 +95,6 @@ const Navbar = () => {
 				className='menu'
 				onClick={() => {
 					menuHandler();
-					handleoutsideClick();
 				}}
 			>
 				<Image
